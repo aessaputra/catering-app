@@ -14,11 +14,9 @@
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
-    {{-- Kita akan include file navbar di sini nanti --}}
-    {{-- @include('layouts.partials.admin.navbar') --}}
+    @include('layouts.partials.admin.navbar')
 
-    {{-- Kita akan include file sidebar di sini nanti --}}
-    {{-- @include('layouts.partials.admin.sidebar') --}}
+    @include('layouts.partials.admin.sidebar')
 
     <div class="content-wrapper">
         <section class="content-header">

@@ -23,11 +23,11 @@ use App\Http\Controllers\Public\OrderController;
 */
 
 // == RUTE PUBLIK ==
-// Route::get('/', [HomeController::class, 'index'])->name('home');
-// Route::get('/menu', [HomeController::class, 'menu'])->name('menu');
-// Route::get('/cart', [HomeController::class, 'cart'])->name('cart');
-// Route::post('/process-order', [OrderController::class, 'processWhatsAppOrder'])->name('order.process');
-// Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/menu', [HomeController::class, 'menu'])->name('menu');
+Route::get('/cart', [HomeController::class, 'cart'])->name('cart');
+Route::post('/process-order', [OrderController::class, 'processWhatsAppOrder'])->name('order.process');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
