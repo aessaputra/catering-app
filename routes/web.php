@@ -46,7 +46,5 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     // Ini akan secara otomatis membuat rute:
     // admin.categories.index, .create, .store, .show, .edit, .update, .destroy
     Route::resource('categories', CategoryController::class);
-    
-    // Rute CRUD untuk Produk
-    // Route::resource('products', ProductController::class);
+    Route::resource('products', ProductController::class);
 });
