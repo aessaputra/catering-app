@@ -23,17 +23,11 @@ use App\Http\Controllers\Public\OrderController;
 */
 
 // == RUTE PUBLIK ==
-// Rute-rute ini dapat diakses oleh semua pengunjung.
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/menu', [HomeController::class, 'menu'])->name('menu');
-Route::get('/cart', [HomeController::class, 'cart'])->name('cart');
-Route::post('/process-order', [OrderController::class, 'processWhatsAppOrder'])->name('order.process');
-
-
-// == RUTE AUTENTIKASI ==
-// Rute untuk login, register, dll. sudah di-handle oleh Laravel Breeze.
-// Termasuk rute '/dashboard' bawaan Breeze yang akan kita arahkan ke admin.
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/', [HomeController::class, 'index'])->name('home');
+// Route::get('/menu', [HomeController::class, 'menu'])->name('menu');
+// Route::get('/cart', [HomeController::class, 'cart'])->name('cart');
+// Route::post('/process-order', [OrderController::class, 'processWhatsAppOrder'])->name('order.process');
+// Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
@@ -54,5 +48,5 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('categories', CategoryController::class);
     
     // Rute CRUD untuk Produk
-    Route::resource('products', ProductController::class);
+    // Route::resource('products', ProductController::class);
 });
