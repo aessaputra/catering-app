@@ -35,6 +35,13 @@
                         <p>Produk</p>
                     </a>
                 </li>
+                <li class="nav-header">MANAJEMEN PENJUALAN</li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.orders.index') }}" class="nav-link {{ request()->routeIs('admin.orders.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-shopping-bag"></i>
+                        <p>Pesanan</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         </div>
