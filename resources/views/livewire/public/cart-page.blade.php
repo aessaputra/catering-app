@@ -54,7 +54,7 @@
             <h2 class="text-3xl font-bold text-gray-700">Keranjang Anda Kosong</h2>
             <p class="text-gray-500 mt-2">Sepertinya Anda belum menambahkan menu apa pun.</p>
             <a href="{{ route('menu') }}"
-                class="mt-6 inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">
+                class="mt-6 inline-block bg-amber-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-amber-600 transition-colors">
                 Kembali ke Menu
             </a>
         </div>
