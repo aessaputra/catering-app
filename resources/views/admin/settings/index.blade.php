@@ -81,6 +81,46 @@
                 </div>
             </div>
 
+            <div class="card-body">
+                <h4 class="text-secondary mb-3">Informasi Kontak & Footer</h4>
+                <div class="form-group">
+                    <label for="address">Alamat Kantor/Toko</label>
+                    <textarea name="address" id="address" class="form-control" rows="3" required>{{ $settings['address'] ?? '' }}</textarea>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="social_facebook">URL Facebook</label>
+                            <input type="url" name="social_facebook" class="form-control" id="social_facebook"
+                                value="{{ $settings['social_facebook'] ?? '' }}"
+                                placeholder="https://facebook.com/username">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="social_instagram">URL Instagram</label>
+                            <input type="url" name="social_instagram" class="form-control" id="social_instagram"
+                                value="{{ $settings['social_instagram'] ?? '' }}"
+                                placeholder="https://instagram.com/username">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="social_tiktok">URL TikTok</label>
+                            <input type="url" name="social_tiktok" class="form-control" id="social_tiktok"
+                                value="{{ $settings['social_tiktok'] ?? '' }}" placeholder="https://tiktok.com/@username">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="maps_embed_url">URL Embed Google Maps</label>
+                    <textarea name="maps_embed_url" id="maps_embed_url" class="form-control" rows="4"
+                        placeholder="Paste kode `src` dari iframe Google Maps di sini">{{ $settings['maps_embed_url'] ?? '' }}</textarea>
+                    <small class="form-text text-muted">Buka Google Maps, cari lokasi Anda, klik Bagikan > Sematkan Peta,
+                        lalu salin HANYA URL yang ada di dalam atribut `src="..."`.</small>
+                </div>
+            </div>
+
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Simpan Pengaturan</button>
             </div>

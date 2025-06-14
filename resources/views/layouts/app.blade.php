@@ -23,13 +23,10 @@
         <main>
             {{ $slot }}
         </main>
-
-        <footer class="bg-white mt-12 py-6">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
-                <p>&copy; {{ date('Y') }} CateringApp. All Rights Reserved.</p>
-            </div>
-        </footer>
     </div>
+
+    <x-public.footer />
+
     @livewireScripts
 </body>
 

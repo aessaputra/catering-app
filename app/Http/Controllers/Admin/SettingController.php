@@ -35,6 +35,11 @@ class SettingController extends Controller
             'app_name' => 'required|string|max:255',
             'about_us_text' => 'required|string',
             'whatsapp_number' => 'required|string|numeric',
+            'address' => 'required|string',
+            'social_facebook' => 'nullable|url',
+            'social_instagram' => 'nullable|url',
+            'social_tiktok' => 'nullable|url',
+            'maps_embed_url' => 'nullable|url',
         ]);
 
         // Simpan data teks menggunakan updateOrCreate
