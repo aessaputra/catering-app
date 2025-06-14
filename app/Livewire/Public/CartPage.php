@@ -84,7 +84,11 @@ class CartPage extends Component
             'whatsapp_message'  => $message,
         ]);
 
-        $whatsappNumber = config('services.whatsapp.number');
+        $whatsappNumber = setting('whatsapp_number');
+        if (!$whatsappNumber) {
+            toast('Nomor WhatsApp admin belum diatur.', 'error');
+            return;
+        }
         $encodedMessage = urlencode($message);
         $whatsappUrl = "https://api.whatsapp.com/send?phone={$whatsappNumber}&text={$encodedMessage}";
 
