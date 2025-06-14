@@ -31,8 +31,21 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        // View ini akan kita buat di langkah selanjutnya
-        return view('admin.orders.show', compact('order'));
+        // Lakukan konversi manual di sini sebagai solusi pasti.
+        $cartDetails = is_string($order->cart_details)
+            ? json_decode($order->cart_details, true)
+            : $order->cart_details;
+
+        // Pengaman tambahan jika hasil decode null atau bukan array
+        if (!is_array($cartDetails)) {
+            $cartDetails = []; // Jadikan array kosong agar view tidak error
+        }
+
+        // Kirim variabel 'order' dan 'cartDetails' yang sudah diproses ke view
+        return view('admin.orders.show', [
+            'order' => $order,
+            'cartDetails' => $cartDetails
+        ]);
     }
 
     /**

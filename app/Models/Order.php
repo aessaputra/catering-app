@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Order extends Model
 {
@@ -18,7 +19,13 @@ class Order extends Model
     ];
 
     protected $casts = [
-        'cart_details' => 'array',
         'total_price' => 'decimal:2',
     ];
+
+    protected function cartDetails(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => is_string($value) ? json_decode($value, true) : $value,
+        );
+    }
 }
