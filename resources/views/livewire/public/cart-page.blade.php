@@ -1,5 +1,4 @@
 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    {{-- Kita gunakan !empty() karena $cartItems sekarang adalah array --}}
     @if (!empty($cartItems))
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
@@ -41,8 +40,8 @@
                     <span>Rp {{ $total }}</span>
                 </div>
                 <div class="mt-8">
-                    <button wire:click="processOrder" wire:loading.attr="disabled"
-                        class="w-full bg-green-500 text-white font-bold py-3 rounded-lg hover:bg-green-600 transition-colors text-lg">
+                    <button wire:click="processOrder" wire:loading.attr="disabled" wire:target="processOrder"
+                        class="w-full bg-green-500 text-white font-bold py-3 rounded-lg hover:bg-green-600 transition-colors text-lg flex items-center justify-center disabled:opacity-75">
                         <i class="fab fa-whatsapp"></i> Pesan Sekarang via WhatsApp
                     </button>
                 </div>

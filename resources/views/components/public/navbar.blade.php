@@ -3,8 +3,14 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('home') }}" class="text-xl font-bold text-amber-600">
-                        🍔 CateringApp
+                    <a href="{{ route('home') }}">
+                        @if (setting('app_logo'))
+                            <img class="block h-10 w-auto" src="{{ Storage::url(setting('app_logo')) }}"
+                                alt="{{ setting('app_name') }}">
+                        @else
+                            <span
+                                class="text-xl font-bold text-amber-600">{{ setting('app_name', 'CateringApp') }}</span>
+                        @endif
                     </a>
                 </div>
             </div>
